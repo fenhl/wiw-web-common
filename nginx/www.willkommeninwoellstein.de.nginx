@@ -1,4 +1,5 @@
 server {
+    server_name de.willkommeninwoellstein.de;
     server_name www.willkommeninwoellstein.de;
 
     listen 80;
