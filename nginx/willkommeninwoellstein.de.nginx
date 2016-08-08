@@ -1,5 +1,5 @@
 server {
-    server_name ~^([a-z]{2}\.)?(willkommeninwoellstein\.de|wiw\.(dev\.)?(mercredi\.)?fenhl\.net)$;
+    server_name "~^([a-z]{2}\.)?(willkommeninwoellstein\.de|wiw\.(dev\.)?(mercredi\.)?fenhl\.net)$";
 
     listen 80;
     listen [::]:80;
