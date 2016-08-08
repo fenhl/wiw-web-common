@@ -8,4 +8,12 @@ server {
     location / {
         proxy_pass http://localhost:18800;
     }
+
+    error_page 404 /error/404.html;
+    error_page 500 502 503 504 /error/50x.html;
+
+    location /error/ {
+        root /opt/git/github.com/fenhl/boerse.willkommeninwoellstein.de/master/error;
+        internal;
+    }
 }
