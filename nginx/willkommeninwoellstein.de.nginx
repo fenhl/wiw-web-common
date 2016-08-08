@@ -1,0 +1,14 @@
+server {
+    server_name ~^([a-z]{2}\.)?(willkommeninwoellstein\.de|wiw\.(dev\.)?(mercredi\.)?fenhl\.net)$;
+
+    listen 80;
+    listen [::]:80;
+
+    root /var/www/willkommeninwoellstein.de;
+    index index.html;
+    charset utf-8;
+
+    location / {
+        try_files $uri $uri.html $uri/ =404;
+    }
+}

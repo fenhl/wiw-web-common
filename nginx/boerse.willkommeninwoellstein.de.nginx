@@ -1,0 +1,11 @@
+server {
+    server_name ~^(boerse|xn--brse-5qa)\.(willkommeninwoellstein\.de|wiw\.(dev\.)?(mercredi\.)?fenhl\.net)$;
+    server_name ~^(wiw-boerse|xn--wiw-brse-r4a)\.pmpl\.de$; # aliased for historical reasons
+
+    listen 80;
+    listen [::]:80;
+
+    location / {
+        proxy_pass http://localhost:18800;
+    }
+}

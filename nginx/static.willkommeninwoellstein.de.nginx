@@ -1,0 +1,14 @@
+server {
+    server_name ~^static\.(willkommeninwoellstein\.de|wiw\.(dev\.)?(mercredi\.)?fenhl\.net)$;
+
+    listen 80;
+    listen [::]:80;
+
+    root /opt/git/github.com/fenhl/wiw-web-common/master/static;
+    charset utf-8;
+
+    location / {
+        autoindex on;
+        try_files $uri $uri.html $uri/ =404;
+    }
+}

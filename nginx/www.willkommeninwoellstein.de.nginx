@@ -1,0 +1,8 @@
+server {
+    server_name www.willkommeninwoellstein.de;
+
+    listen 80;
+    listen [::]:80;
+
+    return 301 $scheme://willkommeninwoellstein.de$request_uri;
+}
