@@ -13,7 +13,7 @@ server {
     error_page 500 502 503 504 /error/50x.html;
 
     location /error/ {
-        root /opt/git/github.com/fenhl/boerse.willkommeninwoellstein.de/master/error;
+        root /opt/git/github.com/fenhl/boerse.willkommeninwoellstein.de/master;
         internal;
     }
 }
