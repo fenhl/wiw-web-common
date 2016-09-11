@@ -12,6 +12,7 @@ server {
 
     location / {
         proxy_pass http://localhost:18800;
+        proxy_set_header X-Fenhl-TLS $https;
     }
 
     error_page 404 /error/404.html;
