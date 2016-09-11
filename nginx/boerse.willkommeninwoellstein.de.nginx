@@ -4,6 +4,11 @@ server {
 
     listen 80;
     listen [::]:80;
+    listen 443 ssl;
+    listen [::]:443 ssl;
+
+    ssl_certificate /etc/letsencrypt/live/willkommeninwoellstein.de/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/willkommeninwoellstein.de/privkey.pem;
 
     location / {
         proxy_pass http://localhost:18800;
