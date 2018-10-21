@@ -1,9 +1,13 @@
 server {
-    server_name de.willkommeninwoellstein.de;
     server_name www.willkommeninwoellstein.de;
 
     listen 80;
     listen [::]:80;
+    listen 443 ssl;
+    listen [::]:443 ssl;
 
-    return 301 $scheme://willkommeninwoellstein.de$request_uri;
+    ssl_certificate /etc/ssl/certs/willkommeninwoellstein.de.crt;
+    ssl_certificate_key /etc/ssl/private/willkommeninwoellstein.de.key;
+
+    return 301 https://willkommeninwoellstein.de$request_uri;
 }

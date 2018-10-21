@@ -1,13 +1,17 @@
 server {
-    server_name "~^([a-z]{2}\.)?(willkommeninwoellstein\.de|wiw\.(dev\.)?(mercredi\.)?fenhl\.net)$";
+    server_name willkommeninwoellstein.de;
 
     listen 80;
     listen [::]:80;
     listen 443 ssl;
     listen [::]:443 ssl;
 
-    ssl_certificate /etc/letsencrypt/live/willkommeninwoellstein.de/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/willkommeninwoellstein.de/privkey.pem;
+    ssl_certificate /etc/ssl/certs/willkommeninwoellstein.de.crt;
+    ssl_certificate_key /etc/ssl/private/willkommeninwoellstein.de.key;
+
+    if ($scheme = http) {
+        return 301 https://$host$request_uri;
+    }
 
     root /var/www/willkommeninwoellstein.de;
     index index.html;
